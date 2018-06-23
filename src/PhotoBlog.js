@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+
+import Header from './components/Header'
+import Footer from './components/Footer'
 import Gallery from 'react-photo-gallery' // http://neptunian.github.io/react-photo-gallery/
 import Lightbox from 'react-images' // https://github.com/jossmac/react-images
 import { galleryFormattedPhotoSet, lightboxFormattedPhotoSet } from './helpers/helperFunctions'
@@ -16,7 +19,8 @@ class PhotoBlog extends Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
+        <Header props={{loggedIn: false}}/>
         <Gallery 
           photos={galleryFormattedPhotoSet} 
           onClick={this.toggleLightbox} 
@@ -30,7 +34,8 @@ class PhotoBlog extends Component {
           onClose={this.toggleLightbox}
           backdropClosesModal={true}
         />
-      </div>
+        <Footer />
+      </React.Fragment>
     )
   }
 }
