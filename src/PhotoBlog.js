@@ -20,7 +20,7 @@ class PhotoBlog extends Component {
   render() {
     return (
       <React.Fragment>
-        <Header props={{loggedIn: false}}/>
+        <Header props={{loggedIn: true}}/>
         <Gallery 
           photos={galleryFormattedPhotoSet} 
           onClick={this.toggleLightbox} 
