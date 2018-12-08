@@ -1,11 +1,6 @@
 {
-<<<<<<< HEAD
-  "short_name": "React App",
-  "name": "Create React App Sample",
-=======
-  "short_name": "Photo Blog",
-  "name": "Photo Blog",
->>>>>>> 24e1fcf45d50d39785955d573154a8a2ba9c5300
+  "short_name": "Photo Gallery",
+  "name": "Photo Gallery",
   "icons": [
     {
       "src": "favicon.ico",
@@ -13,11 +8,7 @@
       "type": "image/x-icon"
     }
   ],
-<<<<<<< HEAD
-  "start_url": ".",
-=======
   "start_url": "./index.html",
->>>>>>> 24e1fcf45d50d39785955d573154a8a2ba9c5300
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"

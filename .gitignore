@@ -1,13 +1,4 @@
-<<<<<<< HEAD
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
 
 # production
 /build
@@ -22,7 +13,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-=======
+
 # Logs
 logs
 *.log
@@ -84,4 +75,3 @@ typings/
 
 # next.js build output
 .next
->>>>>>> 24e1fcf45d50d39785955d573154a8a2ba9c5300
