@@ -1,32 +1,130 @@
-.App {
-  text-align: center;
+*, html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+  vertical-align: baseline;
+  max-width: 100%;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+small {
+  font-size: 80%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+	line-height: 1;
+  font-size: 110%;
+  box-sizing: border-box;
+  overflow-x: scroll;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+h1,h2,h3,h4,h5 {
+  font-size: 125%;
+  font-weight: 700;
   color: white;
+  padding: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+h2,h3,h4,h5 {
+  color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+strong {
+  font-weight: 700;
+  font-size: 110%;
+}
+
+main {
+  text-align: center;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  /* height: 100%;
+  max-height: 100%;
+  width: 100%;
+  max-width: 100%;
+  background-size: contain; */
+}
+
+.grid {
+  display: grid;
+  grid-row-gap: 20px;
+  grid-column-gap: 20px
+}
+
+.grid-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-4 {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+header, 
+.tags-div,
+footer {
+  padding: 20px;
+  background-color: lightsteelblue;
+}
+
+.tags-div {
+  margin: 40px 0;
+}
+
+.grid-figure {
+  padding: 13px;
+  border: 2px solid #edeeed;
+  background: #fff;
+  box-shadow: 0 0 0 5px rgba(0,0,0,0.03);
+}
+
+.photo-grid {
+  padding: 10px;
 }

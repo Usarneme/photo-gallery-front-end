@@ -1,28 +1,54 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import PhotoGrid from './components/PhotoGrid'
+
+import { photos, tags } from './api'
+
+import './App.css'
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      isLoading: false,
+      photos: [],
+      tags: [],
+      ...props
+    }
+  }
+
+  componentDidMount() {
+    this.setState({
+      photos,
+      tags
+    })
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+      <div className="">
+        <header className="">
+          <h1>Photo Gallery</h1>
         </header>
+        <main>
+          <PhotoGrid photos={this.state.photos} />
+
+          <div className="grid tags-div">
+            <h3>Tags</h3>
+            <div className="grid grid-3">
+              { this.state.tags.map((tag, index) => {
+                return (
+                  <div key={index}>{tag}</div>
+                )
+              })}
+            </div>
+          </div>
+        </main>
+        <footer>
+          &copy; 2018
+        </footer>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
