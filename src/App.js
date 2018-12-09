@@ -34,7 +34,7 @@ class App extends Component {
 
           <div className="grid tags-div">
             <h3>Tags</h3>
-            <div className="grid grid-3">
+            <div className="grid grid-3 tags-grid">
               { this.state.tags.map((tag, index) => {
                 return (
                   <div key={index}>{tag}</div>

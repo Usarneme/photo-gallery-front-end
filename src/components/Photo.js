@@ -10,7 +10,7 @@ const Photo = props => {
       </div>
 
       <figcaption>
-        <h3>{props.originalname}</h3>
+        <h3>{props.originalname.substring(0,props.originalname.indexOf('.'))}</h3>
         <ul>
           {props.tags ? props.tags.map((tag, key) => <li className="" key={key}>{tag}</li>) : ''}
         </ul>

@@ -5,7 +5,7 @@ import Photo from './Photo'
 
 const PhotoGrid = props => {
   return (
-    <div className="grid grid-3 photo-grid">
+    <div className="grid photo-grid">
       { props.photos.map((photo, index) => <Photo {...photo} key={index} />) }
     </div>
   )
