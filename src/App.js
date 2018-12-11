@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PhotoGrid from './components/PhotoGrid'
+import { CameraLogo } from './components/Logos'
 
 import { photos, tags } from './api'
 
@@ -24,23 +25,29 @@ class App extends Component {
   }
 
   render() {
+
+    console.dir(CameraLogo)
+
     return (
       <div className="">
-        <header className="">
-          <h1>Photo Gallery</h1>
-        </header>
+        <a href="/">
+          <header className="grid grid-2 grid-header">
+            <CameraLogo />
+            <h1>Paparanni</h1>
+          </header>
+        </a>
         <main>
           <PhotoGrid photos={this.state.photos} />
 
           <div className="grid tags-div">
-            <h3>Tags</h3>
-            <div className="grid grid-3 tags-grid">
+            <h4 className="border-bottom">Tags</h4>
+            <ul className="grid grid-3 tags-grid">
               { this.state.tags.map((tag, index) => {
                 return (
-                  <div key={index}>{tag}</div>
+                  <li className="tag-li" key={index}>{tag}</li>
                 )
               })}
-            </div>
+            </ul>
           </div>
         </main>
         <footer>
