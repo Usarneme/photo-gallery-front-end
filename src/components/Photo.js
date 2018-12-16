@@ -1,32 +1,50 @@
 import React from 'react'
-
 import PropTypes from 'prop-types'
 
-const Photo = props => {
-  return (
-    <figure className="grid-figure">
-      <div className="grid-photo">
-        <img src={`http://paparanni.com/images/uploads/${props.filename}`} alt={props.originalname} className="grid-photo" />
-      </div>
+import ReactFancyBox from 'react-fancybox'
+import 'react-fancybox/lib/fancybox.css'
 
-      <figcaption>
-        <h3>{props.originalname.substring(0,props.originalname.indexOf('.'))}</h3>
-        <ul>
-          {props.tags ? props.tags.map((tag, key) => <li className="" key={key}>{tag}</li>) : ''}
-        </ul>
-      </figcaption>
+class Photo extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      ...props
+    }
+  }
 
-    </figure>
-  )
-}
+  static propTypes = {
+    _id: PropTypes.string.isRequired,
+    filename: PropTypes.string.isRequired,
+    originalname: PropTypes.string.isRequired,
+    __v: PropTypes.number,
+    index: PropTypes.number,
+    tags: PropTypes.array.isRequired
+  }  
 
-Photo.propTypes = {
-  _id: PropTypes.string.isRequired,
-  filename: PropTypes.string.isRequired,
-  originalname: PropTypes.string.isRequired,
-  __v: PropTypes.number,
-  index: PropTypes.number,
-  tags: PropTypes.array.isRequired
+  render() {
+    return (
+      <figure className="grid-figure">
+        <div className="grid-photo">
+          <ReactFancyBox
+            thumbnail={`http://paparanni.com/images/uploads/thumbs/${this.props.filename}`}
+            image={`http://paparanni.com/images/uploads/${this.props.filename}`}
+            caption={this.props.originalname}
+            id={this.props._id}
+            alt={this.props.originalname}
+            showCloseBtn={false}
+            tags={this.props.tags}
+          />
+        </div>
+
+        <figcaption>
+          <h3>{this.props.originalname.substring(0,this.props.originalname.indexOf('.'))}</h3>
+          <ul>
+            {this.props.tags ? this.props.tags.map((tag, key) => <li className="" key={key}>{tag}</li>) : ''}
+          </ul>
+        </figcaption>
+      </figure>
+    )
+  }
 }
 
 export default Photo

@@ -55,6 +55,8 @@ body {
   font-size: 110%;
   box-sizing: border-box;
   overflow-x: scroll;
+  background-color: #222;
+  color: #fff;
 }
 
 h1,h2,h3,h4,h5 {
@@ -70,12 +72,11 @@ h1 {
   font-size: 250%;
 }
 
-/* headings 2 and 3 are on a white background */
 h2,h3 {
-  color: black;
+  font-weight: 500;
 }
 
-/* headings 1, 4, and 5 are on a non-white background */
+/* text shadow helps reading clarity for headings on a non-white background */
 h1, h4, h5 {
   text-shadow: black 1px 1px;
 }
@@ -128,10 +129,9 @@ img {
 }
 
 header, 
-.tags-div,
 footer {
-  padding: 20px;
-  background-color: lightsteelblue;
+  padding: 20px 25px;
+  background-color: rgba(176,196,222,0.2)
 }
 
 .grid-header {
@@ -156,9 +156,12 @@ footer {
 
 .grid-figure {
   padding: 15px 15px 5px 15px;
-  border: 2px solid #edeeed;
-  background: #fff;
   box-shadow: 0 0 0 5px rgba(0,0,0,0.03);
+  word-wrap: break-word;
+  background-color: #303030;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,0.125);
+  border-radius: 0.25rem;
 }
 
 .photo-grid {
@@ -166,12 +169,25 @@ footer {
   grid-template-columns: 1fr;
 }
 
-/* Single Photo component styles */
+/* This resets the React FancyBox Lightbox image gallery CSS so the img fits in (does not overflow) a CSS grid container */
+.react-fancybox .thumbnail img {
+  max-width: 100%;
+}
 
+.box .image-box img {
+  max-height: 90vh;
+}
+
+/* Single Photo component styles */
 .single-photo {
   max-width: 900px;
   margin: 0 auto;
   display: grid;
+}
+
+.caption,
+.caption-text {
+  color: #222;
 }
 
 @media all and (min-width: 768px) {
@@ -191,7 +207,8 @@ footer {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
   .tags-div {
-    margin: 40px;
+    margin: 40px auto;
+    max-width: 900px;
   }
 }
 
@@ -205,7 +222,4 @@ footer {
   .photo-grid {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
-  .tags-div {
-    margin: 100px 100px 0 100px;
-  }  
 }
